@@ -32,4 +32,13 @@ Optional (nice to have):
 ## Extra
 - [x] dartz used for funtional programming
 - [x] auto_route used for routing
+- [x] json_serializable for JSON serialization
+
+## Nice to know 
+- Took 20+ hours
+- Can change the asset JSON, that will update accordingly
+- freezed union is used for easier state and event coding :3 
+- Used kebab case in the JSON ( Just for fun ;) )
+
+
 
