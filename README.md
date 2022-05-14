@@ -1,16 +1,17 @@
 # test_rafsan for BakerSoft GmbH
 
-## Getting Started
+## Getting started
 Commands 
-1. flutter pub run build_runner build --delete-conflicting-outputs
-2. Open a  iOS Simulator or Android Emulator
-3. flutter  run
+1. flutter pub get
+2. flutter pub run build_runner build --delete-conflicting-outputs
+3. Open a  iOS Simulator or Android Emulator
+4. flutter  run
 
 
 ## Architecture
 This project is build with Clean Architecture
 
-## All Mandatory and Optional is done
+## All mandatory and optional is done
 - [x] As a user I’d like to view a list of products. 
 - [x] As a user I’d like to view details of a product.
 - [x] As a user I’d like to add a product to the cart.
