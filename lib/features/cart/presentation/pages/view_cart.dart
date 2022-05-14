@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_rafsan/features/cart/presentation/widgets/leading_image.dart';
+import '../widgets/leading_image.dart';
 
 import '../../../../my_app.dart';
 import '../bloc/cart_bloc/cart_bloc.dart';

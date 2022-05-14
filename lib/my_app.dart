@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'features/cart/presentation/bloc/favorite_bloc/favorite_bloc.dart';
 
 import 'features/cart/presentation/bloc/cart_bloc/cart_bloc.dart';
+import 'features/cart/presentation/bloc/favorite_bloc/favorite_bloc.dart';
 import 'features/cart/presentation/bloc/product_bloc/product_bloc.dart';
 import 'injection.dart';
 import 'router/app_router.gr.dart';

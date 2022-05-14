@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_rafsan/features/cart/presentation/bloc/favorite_bloc/favorite_bloc.dart';
-import 'package:test_rafsan/features/cart/presentation/widgets/loading.dart';
+import '../bloc/favorite_bloc/favorite_bloc.dart';
+import '../widgets/loading.dart';
 
 import '../../domain/entities/product.dart';
 import '../widgets/leading_image.dart';

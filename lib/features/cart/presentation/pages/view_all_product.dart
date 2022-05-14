@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:test_rafsan/router/app_router.gr.dart';
+import '../../../../router/app_router.gr.dart';
 
 import '../../../../my_app.dart';
 import '../../domain/entities/product.dart';

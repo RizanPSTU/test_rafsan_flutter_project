@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:test_rafsan/features/cart/domain/entities/product.dart';
+import '../../domain/entities/product.dart';
 
 import 'fade_image.dart';
 
