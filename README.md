@@ -30,7 +30,7 @@ Optional (nice to have):
 - [x] Clean architecture
 
 ## Extra
-- [x] dartz used for funtional programming
+- [x] dartz used for functional programming
 - [x] auto_route used for routing
 - [x] json_serializable for JSON serialization
 
