@@ -13,6 +13,9 @@ class Product with _$Product {
     required final int stock,
     required final String taste,
     required final List<String> previewUrlList,
-    @Default(false) bool isFavorite,
   }) = _Product;
+
+  String priceEuro() {
+    return "€${price}";
+  }
 }

@@ -13,11 +13,11 @@ part 'product_state.dart';
 @singleton
 class ProductBloc extends Bloc<ProductEvent, ProductState> {
   final GetAllProduct _getAllProduct;
-  final List<Product> allProductList = [];
+  final List<Product> _allProductList = [];
 
   ProductBloc(
     this._getAllProduct,
-  ) : super(_Loading()) {
+  ) : super(ProductState.loading()) {
     on<ProductEvent>((event, emit) async {
       await event.when(
         started: () async {
@@ -28,24 +28,17 @@ class ProductBloc extends Bloc<ProductEvent, ProductState> {
               emit(ProductState.error(error: _mapFailureToMessage(error)));
             },
             (data) {
-              allProductList.addAll(data);
-              emit(ProductState.loaded(productList: allProductList));
+              _allProductList.addAll(data);
+              emit(ProductState.loaded(productList: _allProductList));
             },
           );
         },
-        toggleFavorite: (Product product) {
-          emit(ProductState.loading());
-          replaceProduct(isFavorite: !product.isFavorite, product: product);
-          emit(ProductState.loaded(productList: allProductList));
-        },
+  
       );
     });
   }
 
-  void replaceProduct({required Product product, required bool isFavorite}) {
-    final _index = allProductList.indexOf(product);
-    allProductList[_index] = product.copyWith(isFavorite: isFavorite);
-  }
+
 
   String _mapFailureToMessage(Failure failure) {
     switch (failure.runtimeType) {

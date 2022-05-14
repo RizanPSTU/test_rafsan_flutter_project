@@ -23,7 +23,6 @@ mixin _$Product {
   int get stock => throw _privateConstructorUsedError;
   String get taste => throw _privateConstructorUsedError;
   List<String> get previewUrlList => throw _privateConstructorUsedError;
-  bool get isFavorite => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ProductCopyWith<Product> get copyWith => throw _privateConstructorUsedError;
@@ -40,8 +39,7 @@ abstract class $ProductCopyWith<$Res> {
       String nutration,
       int stock,
       String taste,
-      List<String> previewUrlList,
-      bool isFavorite});
+      List<String> previewUrlList});
 }
 
 /// @nodoc
@@ -61,7 +59,6 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
     Object? stock = freezed,
     Object? taste = freezed,
     Object? previewUrlList = freezed,
-    Object? isFavorite = freezed,
   }) {
     return _then(_value.copyWith(
       id: id == freezed
@@ -92,10 +89,6 @@ class _$ProductCopyWithImpl<$Res> implements $ProductCopyWith<$Res> {
           ? _value.previewUrlList
           : previewUrlList // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      isFavorite: isFavorite == freezed
-          ? _value.isFavorite
-          : isFavorite // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -113,8 +106,7 @@ abstract class _$$_ProductCopyWith<$Res> implements $ProductCopyWith<$Res> {
       String nutration,
       int stock,
       String taste,
-      List<String> previewUrlList,
-      bool isFavorite});
+      List<String> previewUrlList});
 }
 
 /// @nodoc
@@ -135,7 +127,6 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
     Object? stock = freezed,
     Object? taste = freezed,
     Object? previewUrlList = freezed,
-    Object? isFavorite = freezed,
   }) {
     return _then(_$_Product(
       id: id == freezed
@@ -166,10 +157,6 @@ class __$$_ProductCopyWithImpl<$Res> extends _$ProductCopyWithImpl<$Res>
           ? _value._previewUrlList
           : previewUrlList // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      isFavorite: isFavorite == freezed
-          ? _value.isFavorite
-          : isFavorite // ignore: cast_nullable_to_non_nullable
-              as bool,
     ));
   }
 }
@@ -184,8 +171,7 @@ class _$_Product extends _Product {
       required this.nutration,
       required this.stock,
       required this.taste,
-      required final List<String> previewUrlList,
-      this.isFavorite = false})
+      required final List<String> previewUrlList})
       : _previewUrlList = previewUrlList,
         super._();
 
@@ -209,12 +195,8 @@ class _$_Product extends _Product {
   }
 
   @override
-  @JsonKey()
-  final bool isFavorite;
-
-  @override
   String toString() {
-    return 'Product(id: $id, name: $name, price: $price, nutration: $nutration, stock: $stock, taste: $taste, previewUrlList: $previewUrlList, isFavorite: $isFavorite)';
+    return 'Product(id: $id, name: $name, price: $price, nutration: $nutration, stock: $stock, taste: $taste, previewUrlList: $previewUrlList)';
   }
 
   @override
@@ -229,9 +211,7 @@ class _$_Product extends _Product {
             const DeepCollectionEquality().equals(other.stock, stock) &&
             const DeepCollectionEquality().equals(other.taste, taste) &&
             const DeepCollectionEquality()
-                .equals(other._previewUrlList, _previewUrlList) &&
-            const DeepCollectionEquality()
-                .equals(other.isFavorite, isFavorite));
+                .equals(other._previewUrlList, _previewUrlList));
   }
 
   @override
@@ -243,8 +223,7 @@ class _$_Product extends _Product {
       const DeepCollectionEquality().hash(nutration),
       const DeepCollectionEquality().hash(stock),
       const DeepCollectionEquality().hash(taste),
-      const DeepCollectionEquality().hash(_previewUrlList),
-      const DeepCollectionEquality().hash(isFavorite));
+      const DeepCollectionEquality().hash(_previewUrlList));
 
   @JsonKey(ignore: true)
   @override
@@ -260,8 +239,7 @@ abstract class _Product extends Product {
       required final String nutration,
       required final int stock,
       required final String taste,
-      required final List<String> previewUrlList,
-      final bool isFavorite}) = _$_Product;
+      required final List<String> previewUrlList}) = _$_Product;
   const _Product._() : super._();
 
   @override
@@ -278,8 +256,6 @@ abstract class _Product extends Product {
   String get taste => throw _privateConstructorUsedError;
   @override
   List<String> get previewUrlList => throw _privateConstructorUsedError;
-  @override
-  bool get isFavorite => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_ProductCopyWith<_$_Product> get copyWith =>

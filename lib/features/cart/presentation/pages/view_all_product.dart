@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../bloc/product_bloc/product_bloc.dart';
-import '../widgets/loading.dart';
 
 import '../../../../my_app.dart';
 import '../../domain/entities/product.dart';
+import '../bloc/cart_bloc/cart_bloc.dart';
+import '../bloc/favorite_bloc/favorite_bloc.dart';
+import '../bloc/product_bloc/product_bloc.dart';
+import '../widgets/cart_with_state.dart';
+import '../widgets/loading.dart';
+import '../widgets/product_tile.dart';
 
 class ViewAllProduct extends StatefulWidget {
   const ViewAllProduct({Key? key}) : super(key: key);
@@ -17,6 +21,8 @@ class _ViewAllProductState extends State<ViewAllProduct> {
   @override
   void initState() {
     context.read<ProductBloc>().add(ProductEvent.started());
+    context.read<CartBloc>().add(CartEvent.load());
+    context.read<FavoriteBloc>().add(FavoriteEvent.started());
     super.initState();
   }
 
@@ -25,12 +31,15 @@ class _ViewAllProductState extends State<ViewAllProduct> {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Products'),
+          actions: [
+            CartWithState(),
+          ],
         ),
         body: BlocConsumer<ProductBloc, ProductState>(
           listener: (context, state) {
             state.whenOrNull(
               error: (error) {
-                rootScaffoldMessengerKey.currentState!.showSnackBar(SnackBar(content: Text(error)));
+                showSnackBar(error);
               },
             );
           },
@@ -49,64 +58,7 @@ class _ViewAllProductState extends State<ViewAllProduct> {
                   itemCount: productList.length,
                   itemBuilder: (BuildContext context, int index) {
                     final _sp = productList[index];
-                    return GridTile(
-                      header: Material(
-                        color: Colors.black54,
-                        child: Align(
-                          alignment: Alignment.centerRight,
-                          child: IconButton(
-                            splashRadius: 20,
-                            padding: EdgeInsets.all(0),
-                            icon: _sp.isFavorite
-                                ? Icon(
-                                    Icons.favorite,
-                                    color: Colors.red,
-                                  )
-                                : Icon(
-                                    Icons.favorite_border,
-                                    color: Colors.red,
-                                  ),
-                            onPressed: () {
-                              context.read<ProductBloc>().add(ProductEvent.toggleFavorite(product: _sp));
-                            },
-                          ),
-                        ),
-                      ),
-                      child: _sp.previewUrlList.isNotEmpty
-                          ? Image.network(
-                              _sp.previewUrlList[0],
-                              fit: BoxFit.cover,
-                            )
-                          : SizedBox(
-                              width: 0.0,
-                            ),
-                      footer: GridTileBar(
-                        backgroundColor: Colors.black54,
-                        title: Text(
-                          _sp.name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                        subtitle: Text(
-                          "€${_sp.price}",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                        trailing: Material(
-                          color: Colors.transparent,
-                          child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.shopping_cart,
-                            ),
-                          ),
-                        ),
-                      ),
-                    );
+                    return ProductTile(product: _sp);
                   },
                 );
               },

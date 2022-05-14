@@ -19,6 +19,7 @@ dependencies:
   injectable: ^1.5.3
   auto_route: ^4.0.0
   flutter_bloc: ^8.0.1
+  carousel_slider : ^4.1.1
 
 dev_dependencies:
   flutter_test:
@@ -34,3 +35,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/products.json
+    - assets/no_image.jpeg

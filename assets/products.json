@@ -64,6 +64,19 @@
             "name": "test5",
             "nutration-value": "test 5 nutration",
             "stock": 5
+        },
+        {
+            "id": "6",
+            "type": "delish",
+            "image-url": [
+                "https://baconmockup.com/620/340",
+                "https://via.placeholder.com/150/30FF30",
+                "https://via.placeholder.com/150/3030FF"
+            ],
+            "price": 8,
+            "name": "test6",
+            "nutration-value": "test 6 nutration",
+            "stock": 0
         }
     ]
 }

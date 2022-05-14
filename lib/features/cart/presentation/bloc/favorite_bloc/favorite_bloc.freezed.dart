@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'product_bloc.dart';
+part of 'favorite_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,55 +15,62 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$ProductEvent {
+mixin _$FavoriteEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(Product product) toggleFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(Product product)? toggleFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(Product product)? toggleFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_ToggleFavorite value) toggleFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_ToggleFavorite value)? toggleFavorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_ToggleFavorite value)? toggleFavorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductEventCopyWith<$Res> {
-  factory $ProductEventCopyWith(
-          ProductEvent value, $Res Function(ProductEvent) then) =
-      _$ProductEventCopyWithImpl<$Res>;
+abstract class $FavoriteEventCopyWith<$Res> {
+  factory $FavoriteEventCopyWith(
+          FavoriteEvent value, $Res Function(FavoriteEvent) then) =
+      _$FavoriteEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProductEventCopyWithImpl<$Res> implements $ProductEventCopyWith<$Res> {
-  _$ProductEventCopyWithImpl(this._value, this._then);
+class _$FavoriteEventCopyWithImpl<$Res>
+    implements $FavoriteEventCopyWith<$Res> {
+  _$FavoriteEventCopyWithImpl(this._value, this._then);
 
-  final ProductEvent _value;
+  final FavoriteEvent _value;
   // ignore: unused_field
-  final $Res Function(ProductEvent) _then;
+  final $Res Function(FavoriteEvent) _then;
 }
 
 /// @nodoc
@@ -74,7 +81,7 @@ abstract class _$$_StartedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_StartedCopyWithImpl<$Res> extends _$ProductEventCopyWithImpl<$Res>
+class __$$_StartedCopyWithImpl<$Res> extends _$FavoriteEventCopyWithImpl<$Res>
     implements _$$_StartedCopyWith<$Res> {
   __$$_StartedCopyWithImpl(_$_Started _value, $Res Function(_$_Started) _then)
       : super(_value, (v) => _then(v as _$_Started));
@@ -90,7 +97,7 @@ class _$_Started implements _Started {
 
   @override
   String toString() {
-    return 'ProductEvent.started()';
+    return 'FavoriteEvent.started()';
   }
 
   @override
@@ -106,6 +113,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
+    required TResult Function(Product product) toggleFavorite,
   }) {
     return started();
   }
@@ -114,6 +122,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(Product product)? toggleFavorite,
   }) {
     return started?.call();
   }
@@ -122,6 +131,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
+    TResult Function(Product product)? toggleFavorite,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -134,6 +144,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
+    required TResult Function(_ToggleFavorite value) toggleFavorite,
   }) {
     return started(this);
   }
@@ -142,6 +153,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_ToggleFavorite value)? toggleFavorite,
   }) {
     return started?.call(this);
   }
@@ -150,6 +162,7 @@ class _$_Started implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
+    TResult Function(_ToggleFavorite value)? toggleFavorite,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -159,31 +172,172 @@ class _$_Started implements _Started {
   }
 }
 
-abstract class _Started implements ProductEvent {
+abstract class _Started implements FavoriteEvent {
   const factory _Started() = _$_Started;
 }
 
 /// @nodoc
-mixin _$ProductState {
+abstract class _$$_ToggleFavoriteCopyWith<$Res> {
+  factory _$$_ToggleFavoriteCopyWith(
+          _$_ToggleFavorite value, $Res Function(_$_ToggleFavorite) then) =
+      __$$_ToggleFavoriteCopyWithImpl<$Res>;
+  $Res call({Product product});
+
+  $ProductCopyWith<$Res> get product;
+}
+
+/// @nodoc
+class __$$_ToggleFavoriteCopyWithImpl<$Res>
+    extends _$FavoriteEventCopyWithImpl<$Res>
+    implements _$$_ToggleFavoriteCopyWith<$Res> {
+  __$$_ToggleFavoriteCopyWithImpl(
+      _$_ToggleFavorite _value, $Res Function(_$_ToggleFavorite) _then)
+      : super(_value, (v) => _then(v as _$_ToggleFavorite));
+
+  @override
+  _$_ToggleFavorite get _value => super._value as _$_ToggleFavorite;
+
+  @override
+  $Res call({
+    Object? product = freezed,
+  }) {
+    return _then(_$_ToggleFavorite(
+      product: product == freezed
+          ? _value.product
+          : product // ignore: cast_nullable_to_non_nullable
+              as Product,
+    ));
+  }
+
+  @override
+  $ProductCopyWith<$Res> get product {
+    return $ProductCopyWith<$Res>(_value.product, (value) {
+      return _then(_value.copyWith(product: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_ToggleFavorite implements _ToggleFavorite {
+  const _$_ToggleFavorite({required this.product});
+
+  @override
+  final Product product;
+
+  @override
+  String toString() {
+    return 'FavoriteEvent.toggleFavorite(product: $product)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ToggleFavorite &&
+            const DeepCollectionEquality().equals(other.product, product));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(product));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_ToggleFavoriteCopyWith<_$_ToggleFavorite> get copyWith =>
+      __$$_ToggleFavoriteCopyWithImpl<_$_ToggleFavorite>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(Product product) toggleFavorite,
+  }) {
+    return toggleFavorite(product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Product product)? toggleFavorite,
+  }) {
+    return toggleFavorite?.call(product);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(Product product)? toggleFavorite,
+    required TResult orElse(),
+  }) {
+    if (toggleFavorite != null) {
+      return toggleFavorite(product);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(_ToggleFavorite value) toggleFavorite,
+  }) {
+    return toggleFavorite(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ToggleFavorite value)? toggleFavorite,
+  }) {
+    return toggleFavorite?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(_ToggleFavorite value)? toggleFavorite,
+    required TResult orElse(),
+  }) {
+    if (toggleFavorite != null) {
+      return toggleFavorite(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ToggleFavorite implements FavoriteEvent {
+  const factory _ToggleFavorite({required final Product product}) =
+      _$_ToggleFavorite;
+
+  Product get product => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_ToggleFavoriteCopyWith<_$_ToggleFavorite> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$FavoriteState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Product> productList) loaded,
-    required TResult Function(String error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Product> productList)? loaded,
-    TResult Function(String error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Product> productList)? loaded,
-    TResult Function(String error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -191,40 +345,38 @@ mixin _$ProductState {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ProductStateCopyWith<$Res> {
-  factory $ProductStateCopyWith(
-          ProductState value, $Res Function(ProductState) then) =
-      _$ProductStateCopyWithImpl<$Res>;
+abstract class $FavoriteStateCopyWith<$Res> {
+  factory $FavoriteStateCopyWith(
+          FavoriteState value, $Res Function(FavoriteState) then) =
+      _$FavoriteStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ProductStateCopyWithImpl<$Res> implements $ProductStateCopyWith<$Res> {
-  _$ProductStateCopyWithImpl(this._value, this._then);
+class _$FavoriteStateCopyWithImpl<$Res>
+    implements $FavoriteStateCopyWith<$Res> {
+  _$FavoriteStateCopyWithImpl(this._value, this._then);
 
-  final ProductState _value;
+  final FavoriteState _value;
   // ignore: unused_field
-  final $Res Function(ProductState) _then;
+  final $Res Function(FavoriteState) _then;
 }
 
 /// @nodoc
@@ -235,7 +387,7 @@ abstract class _$$_LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Res>
+class __$$_LoadingCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
       : super(_value, (v) => _then(v as _$_Loading));
@@ -251,7 +403,7 @@ class _$_Loading implements _Loading {
 
   @override
   String toString() {
-    return 'ProductState.loading()';
+    return 'FavoriteState.loading()';
   }
 
   @override
@@ -268,7 +420,6 @@ class _$_Loading implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Product> productList) loaded,
-    required TResult Function(String error) error,
   }) {
     return loading();
   }
@@ -278,7 +429,6 @@ class _$_Loading implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Product> productList)? loaded,
-    TResult Function(String error)? error,
   }) {
     return loading?.call();
   }
@@ -288,7 +438,6 @@ class _$_Loading implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Product> productList)? loaded,
-    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -302,7 +451,6 @@ class _$_Loading implements _Loading {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
   }) {
     return loading(this);
   }
@@ -312,7 +460,6 @@ class _$_Loading implements _Loading {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
   }) {
     return loading?.call(this);
   }
@@ -322,7 +469,6 @@ class _$_Loading implements _Loading {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -332,7 +478,7 @@ class _$_Loading implements _Loading {
   }
 }
 
-abstract class _Loading implements ProductState {
+abstract class _Loading implements FavoriteState {
   const factory _Loading() = _$_Loading;
 }
 
@@ -344,7 +490,7 @@ abstract class _$$_LoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Res>
+class __$$_LoadedCopyWithImpl<$Res> extends _$FavoriteStateCopyWithImpl<$Res>
     implements _$$_LoadedCopyWith<$Res> {
   __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
       : super(_value, (v) => _then(v as _$_Loaded));
@@ -380,7 +526,7 @@ class _$_Loaded implements _Loaded {
 
   @override
   String toString() {
-    return 'ProductState.loaded(productList: $productList)';
+    return 'FavoriteState.loaded(productList: $productList)';
   }
 
   @override
@@ -406,7 +552,6 @@ class _$_Loaded implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
     required TResult Function(List<Product> productList) loaded,
-    required TResult Function(String error) error,
   }) {
     return loaded(productList);
   }
@@ -416,7 +561,6 @@ class _$_Loaded implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Product> productList)? loaded,
-    TResult Function(String error)? error,
   }) {
     return loaded?.call(productList);
   }
@@ -426,7 +570,6 @@ class _$_Loaded implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
     TResult Function(List<Product> productList)? loaded,
-    TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -440,7 +583,6 @@ class _$_Loaded implements _Loaded {
   TResult map<TResult extends Object?>({
     required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
   }) {
     return loaded(this);
   }
@@ -450,7 +592,6 @@ class _$_Loaded implements _Loaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -460,7 +601,6 @@ class _$_Loaded implements _Loaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -470,148 +610,11 @@ class _$_Loaded implements _Loaded {
   }
 }
 
-abstract class _Loaded implements ProductState {
+abstract class _Loaded implements FavoriteState {
   const factory _Loaded({required final List<Product> productList}) = _$_Loaded;
 
   List<Product> get productList => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
-  $Res call({String error});
-}
-
-/// @nodoc
-class __$$_ErrorCopyWithImpl<$Res> extends _$ProductStateCopyWithImpl<$Res>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
-      : super(_value, (v) => _then(v as _$_Error));
-
-  @override
-  _$_Error get _value => super._value as _$_Error;
-
-  @override
-  $Res call({
-    Object? error = freezed,
-  }) {
-    return _then(_$_Error(
-      error: error == freezed
-          ? _value.error
-          : error // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_Error implements _Error {
-  const _$_Error({required this.error});
-
-  @override
-  final String error;
-
-  @override
-  String toString() {
-    return 'ProductState.error(error: $error)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_Error &&
-            const DeepCollectionEquality().equals(other.error, error));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function(List<Product> productList) loaded,
-    required TResult Function(String error) error,
-  }) {
-    return error(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<Product> productList)? loaded,
-    TResult Function(String error)? error,
-  }) {
-    return error?.call(this.error);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<Product> productList)? loaded,
-    TResult Function(String error)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this.error);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
-  }) {
-    return error(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
-  }) {
-    return error?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
-    required TResult orElse(),
-  }) {
-    if (error != null) {
-      return error(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Error implements ProductState {
-  const factory _Error({required final String error}) = _$_Error;
-
-  String get error => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
       throw _privateConstructorUsedError;
 }
