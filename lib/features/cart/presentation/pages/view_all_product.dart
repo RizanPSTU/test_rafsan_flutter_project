@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_rafsan/router/app_router.gr.dart';
 
 import '../../../../my_app.dart';
 import '../../domain/entities/product.dart';
@@ -32,6 +33,15 @@ class _ViewAllProductState extends State<ViewAllProduct> {
         appBar: AppBar(
           title: const Text('Products'),
           actions: [
+            IconButton(
+              onPressed: () {
+                appRouter.push(ViewAllFavoriteRoute());
+              },
+              icon: Icon(
+                Icons.favorite,
+                size: 30,
+              ),
+            ),
             CartWithState(),
           ],
         ),

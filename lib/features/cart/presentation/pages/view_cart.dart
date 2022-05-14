@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:test_rafsan/features/cart/presentation/widgets/leading_image.dart';
 
 import '../../../../my_app.dart';
 import '../bloc/cart_bloc/cart_bloc.dart';
@@ -17,6 +18,12 @@ class ViewCart extends StatelessWidget {
       body: BlocConsumer<CartBloc, CartState>(
         listener: (context, state) {
           state.whenOrNull(
+            max: (message) {
+              showSnackBar(message);
+            },
+            min: (message) {
+              showSnackBar(message);
+            },
             yourQuantityIsHigerThenStock: (message) {
               showSnackBar(message);
             },
@@ -26,6 +33,7 @@ class ViewCart extends StatelessWidget {
           );
         },
         builder: (context, state) {
+          print("Rafsan :${state}");
           return state.maybeWhen(
             loading: () {
               return Loading();
@@ -42,19 +50,35 @@ class ViewCart extends StatelessWidget {
                   final _sp = _spList[index];
                   final _quantity = _spQuantityList[index];
                   return ListTile(
-                    leading: _sp.previewUrlList.isNotEmpty
-                        ? Image.network(
-                            _sp.previewUrlList[0],
-                            fit: BoxFit.cover,
-                          )
-                        : SizedBox(width: 0.0, height: 0.0),
+                    leading: LeadingImage(product: _sp),
                     title: Text(_sp.name),
-                    subtitle: Text("In stock:${_sp.stock}"),
-                    trailing: IconButton(
-                      icon: Icon(Icons.delete),
-                      onPressed: () {
-                        context.read<CartBloc>().add(CartEvent.removeFromCart(product: _sp));
-                      },
+                    subtitle: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        IconButton(
+                            onPressed: () {
+                              context.read<CartBloc>().add(CartEvent.increment(product: _sp));
+                            },
+                            icon: Icon(Icons.add_circle)),
+                        Text("$_quantity"),
+                        IconButton(
+                            onPressed: () {
+                              context.read<CartBloc>().add(CartEvent.decrement(product: _sp));
+                            },
+                            icon: Icon(Icons.remove_circle_outlined)),
+                      ],
+                    ),
+                    trailing: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text("Stock:${_sp.stock}"),
+                        IconButton(
+                          icon: Icon(Icons.delete),
+                          onPressed: () {
+                            context.read<CartBloc>().add(CartEvent.removeFromCart(product: _sp));
+                          },
+                        ),
+                      ],
                     ),
                   );
                 },

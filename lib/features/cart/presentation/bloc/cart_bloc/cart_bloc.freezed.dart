@@ -874,6 +874,8 @@ mixin _$CartState {
     required TResult Function(String message) alreadyInCart,
     required TResult Function(String message) added,
     required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -884,6 +886,8 @@ mixin _$CartState {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -894,6 +898,8 @@ mixin _$CartState {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -906,6 +912,8 @@ mixin _$CartState {
     required TResult Function(_AlreadyInCart value) alreadyInCart,
     required TResult Function(_Added value) added,
     required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -917,6 +925,8 @@ mixin _$CartState {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -928,6 +938,8 @@ mixin _$CartState {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -993,6 +1005,8 @@ class _$_Loading implements _Loading {
     required TResult Function(String message) alreadyInCart,
     required TResult Function(String message) added,
     required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
   }) {
     return loading();
   }
@@ -1006,6 +1020,8 @@ class _$_Loading implements _Loading {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
   }) {
     return loading?.call();
   }
@@ -1019,6 +1035,8 @@ class _$_Loading implements _Loading {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1037,6 +1055,8 @@ class _$_Loading implements _Loading {
     required TResult Function(_AlreadyInCart value) alreadyInCart,
     required TResult Function(_Added value) added,
     required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
   }) {
     return loading(this);
   }
@@ -1051,6 +1071,8 @@ class _$_Loading implements _Loading {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
   }) {
     return loading?.call(this);
   }
@@ -1065,6 +1087,8 @@ class _$_Loading implements _Loading {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -1151,6 +1175,8 @@ class _$_Loaded implements _Loaded {
     required TResult Function(String message) alreadyInCart,
     required TResult Function(String message) added,
     required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
   }) {
     return loaded(cartMap);
   }
@@ -1164,6 +1190,8 @@ class _$_Loaded implements _Loaded {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
   }) {
     return loaded?.call(cartMap);
   }
@@ -1177,6 +1205,8 @@ class _$_Loaded implements _Loaded {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -1195,6 +1225,8 @@ class _$_Loaded implements _Loaded {
     required TResult Function(_AlreadyInCart value) alreadyInCart,
     required TResult Function(_Added value) added,
     required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
   }) {
     return loaded(this);
   }
@@ -1209,6 +1241,8 @@ class _$_Loaded implements _Loaded {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
   }) {
     return loaded?.call(this);
   }
@@ -1223,6 +1257,8 @@ class _$_Loaded implements _Loaded {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
     required TResult orElse(),
   }) {
     if (loaded != null) {
@@ -1318,6 +1354,8 @@ class _$_YourQuantityIsHigerThenStock implements _YourQuantityIsHigerThenStock {
     required TResult Function(String message) alreadyInCart,
     required TResult Function(String message) added,
     required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
   }) {
     return yourQuantityIsHigerThenStock(message);
   }
@@ -1331,6 +1369,8 @@ class _$_YourQuantityIsHigerThenStock implements _YourQuantityIsHigerThenStock {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
   }) {
     return yourQuantityIsHigerThenStock?.call(message);
   }
@@ -1344,6 +1384,8 @@ class _$_YourQuantityIsHigerThenStock implements _YourQuantityIsHigerThenStock {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
     required TResult orElse(),
   }) {
     if (yourQuantityIsHigerThenStock != null) {
@@ -1362,6 +1404,8 @@ class _$_YourQuantityIsHigerThenStock implements _YourQuantityIsHigerThenStock {
     required TResult Function(_AlreadyInCart value) alreadyInCart,
     required TResult Function(_Added value) added,
     required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
   }) {
     return yourQuantityIsHigerThenStock(this);
   }
@@ -1376,6 +1420,8 @@ class _$_YourQuantityIsHigerThenStock implements _YourQuantityIsHigerThenStock {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
   }) {
     return yourQuantityIsHigerThenStock?.call(this);
   }
@@ -1390,6 +1436,8 @@ class _$_YourQuantityIsHigerThenStock implements _YourQuantityIsHigerThenStock {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
     required TResult orElse(),
   }) {
     if (yourQuantityIsHigerThenStock != null) {
@@ -1480,6 +1528,8 @@ class _$_AlreadyInCart implements _AlreadyInCart {
     required TResult Function(String message) alreadyInCart,
     required TResult Function(String message) added,
     required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
   }) {
     return alreadyInCart(message);
   }
@@ -1493,6 +1543,8 @@ class _$_AlreadyInCart implements _AlreadyInCart {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
   }) {
     return alreadyInCart?.call(message);
   }
@@ -1506,6 +1558,8 @@ class _$_AlreadyInCart implements _AlreadyInCart {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
     required TResult orElse(),
   }) {
     if (alreadyInCart != null) {
@@ -1524,6 +1578,8 @@ class _$_AlreadyInCart implements _AlreadyInCart {
     required TResult Function(_AlreadyInCart value) alreadyInCart,
     required TResult Function(_Added value) added,
     required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
   }) {
     return alreadyInCart(this);
   }
@@ -1538,6 +1594,8 @@ class _$_AlreadyInCart implements _AlreadyInCart {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
   }) {
     return alreadyInCart?.call(this);
   }
@@ -1552,6 +1610,8 @@ class _$_AlreadyInCart implements _AlreadyInCart {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
     required TResult orElse(),
   }) {
     if (alreadyInCart != null) {
@@ -1639,6 +1699,8 @@ class _$_Added implements _Added {
     required TResult Function(String message) alreadyInCart,
     required TResult Function(String message) added,
     required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
   }) {
     return added(message);
   }
@@ -1652,6 +1714,8 @@ class _$_Added implements _Added {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
   }) {
     return added?.call(message);
   }
@@ -1665,6 +1729,8 @@ class _$_Added implements _Added {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
     required TResult orElse(),
   }) {
     if (added != null) {
@@ -1683,6 +1749,8 @@ class _$_Added implements _Added {
     required TResult Function(_AlreadyInCart value) alreadyInCart,
     required TResult Function(_Added value) added,
     required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
   }) {
     return added(this);
   }
@@ -1697,6 +1765,8 @@ class _$_Added implements _Added {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
   }) {
     return added?.call(this);
   }
@@ -1711,6 +1781,8 @@ class _$_Added implements _Added {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
     required TResult orElse(),
   }) {
     if (added != null) {
@@ -1799,6 +1871,8 @@ class _$_Removed implements _Removed {
     required TResult Function(String message) alreadyInCart,
     required TResult Function(String message) added,
     required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
   }) {
     return removed(message);
   }
@@ -1812,6 +1886,8 @@ class _$_Removed implements _Removed {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
   }) {
     return removed?.call(message);
   }
@@ -1825,6 +1901,8 @@ class _$_Removed implements _Removed {
     TResult Function(String message)? alreadyInCart,
     TResult Function(String message)? added,
     TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
     required TResult orElse(),
   }) {
     if (removed != null) {
@@ -1843,6 +1921,8 @@ class _$_Removed implements _Removed {
     required TResult Function(_AlreadyInCart value) alreadyInCart,
     required TResult Function(_Added value) added,
     required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
   }) {
     return removed(this);
   }
@@ -1857,6 +1937,8 @@ class _$_Removed implements _Removed {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
   }) {
     return removed?.call(this);
   }
@@ -1871,6 +1953,8 @@ class _$_Removed implements _Removed {
     TResult Function(_AlreadyInCart value)? alreadyInCart,
     TResult Function(_Added value)? added,
     TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
     required TResult orElse(),
   }) {
     if (removed != null) {
@@ -1887,4 +1971,344 @@ abstract class _Removed implements CartState {
   @JsonKey(ignore: true)
   _$$_RemovedCopyWith<_$_Removed> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_MinCopyWith<$Res> {
+  factory _$$_MinCopyWith(_$_Min value, $Res Function(_$_Min) then) =
+      __$$_MinCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$_MinCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
+    implements _$$_MinCopyWith<$Res> {
+  __$$_MinCopyWithImpl(_$_Min _value, $Res Function(_$_Min) _then)
+      : super(_value, (v) => _then(v as _$_Min));
+
+  @override
+  _$_Min get _value => super._value as _$_Min;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$_Min(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Min implements _Min {
+  const _$_Min({this.message = "Minimum is one"});
+
+  @override
+  @JsonKey()
+  final String message;
+
+  @override
+  String toString() {
+    return 'CartState.min(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Min &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_MinCopyWith<_$_Min> get copyWith =>
+      __$$_MinCopyWithImpl<_$_Min>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(Map<Product, int> cartMap) loaded,
+    required TResult Function(String message) yourQuantityIsHigerThenStock,
+    required TResult Function(String message) alreadyInCart,
+    required TResult Function(String message) added,
+    required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
+  }) {
+    return min(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(Map<Product, int> cartMap)? loaded,
+    TResult Function(String message)? yourQuantityIsHigerThenStock,
+    TResult Function(String message)? alreadyInCart,
+    TResult Function(String message)? added,
+    TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
+  }) {
+    return min?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(Map<Product, int> cartMap)? loaded,
+    TResult Function(String message)? yourQuantityIsHigerThenStock,
+    TResult Function(String message)? alreadyInCart,
+    TResult Function(String message)? added,
+    TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
+    required TResult orElse(),
+  }) {
+    if (min != null) {
+      return min(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_YourQuantityIsHigerThenStock value)
+        yourQuantityIsHigerThenStock,
+    required TResult Function(_AlreadyInCart value) alreadyInCart,
+    required TResult Function(_Added value) added,
+    required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
+  }) {
+    return min(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_YourQuantityIsHigerThenStock value)?
+        yourQuantityIsHigerThenStock,
+    TResult Function(_AlreadyInCart value)? alreadyInCart,
+    TResult Function(_Added value)? added,
+    TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
+  }) {
+    return min?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_YourQuantityIsHigerThenStock value)?
+        yourQuantityIsHigerThenStock,
+    TResult Function(_AlreadyInCart value)? alreadyInCart,
+    TResult Function(_Added value)? added,
+    TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
+    required TResult orElse(),
+  }) {
+    if (min != null) {
+      return min(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Min implements CartState {
+  const factory _Min({final String message}) = _$_Min;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_MinCopyWith<_$_Min> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_MaxCopyWith<$Res> {
+  factory _$$_MaxCopyWith(_$_Max value, $Res Function(_$_Max) then) =
+      __$$_MaxCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$_MaxCopyWithImpl<$Res> extends _$CartStateCopyWithImpl<$Res>
+    implements _$$_MaxCopyWith<$Res> {
+  __$$_MaxCopyWithImpl(_$_Max _value, $Res Function(_$_Max) _then)
+      : super(_value, (v) => _then(v as _$_Max));
+
+  @override
+  _$_Max get _value => super._value as _$_Max;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$_Max(
+      message: message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_Max implements _Max {
+  const _$_Max({this.message = "This is the max you can add"});
+
+  @override
+  @JsonKey()
+  final String message;
+
+  @override
+  String toString() {
+    return 'CartState.max(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Max &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_MaxCopyWith<_$_Max> get copyWith =>
+      __$$_MaxCopyWithImpl<_$_Max>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loading,
+    required TResult Function(Map<Product, int> cartMap) loaded,
+    required TResult Function(String message) yourQuantityIsHigerThenStock,
+    required TResult Function(String message) alreadyInCart,
+    required TResult Function(String message) added,
+    required TResult Function(String message) removed,
+    required TResult Function(String message) min,
+    required TResult Function(String message) max,
+  }) {
+    return max(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(Map<Product, int> cartMap)? loaded,
+    TResult Function(String message)? yourQuantityIsHigerThenStock,
+    TResult Function(String message)? alreadyInCart,
+    TResult Function(String message)? added,
+    TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
+  }) {
+    return max?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loading,
+    TResult Function(Map<Product, int> cartMap)? loaded,
+    TResult Function(String message)? yourQuantityIsHigerThenStock,
+    TResult Function(String message)? alreadyInCart,
+    TResult Function(String message)? added,
+    TResult Function(String message)? removed,
+    TResult Function(String message)? min,
+    TResult Function(String message)? max,
+    required TResult orElse(),
+  }) {
+    if (max != null) {
+      return max(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Loading value) loading,
+    required TResult Function(_Loaded value) loaded,
+    required TResult Function(_YourQuantityIsHigerThenStock value)
+        yourQuantityIsHigerThenStock,
+    required TResult Function(_AlreadyInCart value) alreadyInCart,
+    required TResult Function(_Added value) added,
+    required TResult Function(_Removed value) removed,
+    required TResult Function(_Min value) min,
+    required TResult Function(_Max value) max,
+  }) {
+    return max(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_YourQuantityIsHigerThenStock value)?
+        yourQuantityIsHigerThenStock,
+    TResult Function(_AlreadyInCart value)? alreadyInCart,
+    TResult Function(_Added value)? added,
+    TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
+  }) {
+    return max?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Loading value)? loading,
+    TResult Function(_Loaded value)? loaded,
+    TResult Function(_YourQuantityIsHigerThenStock value)?
+        yourQuantityIsHigerThenStock,
+    TResult Function(_AlreadyInCart value)? alreadyInCart,
+    TResult Function(_Added value)? added,
+    TResult Function(_Removed value)? removed,
+    TResult Function(_Min value)? min,
+    TResult Function(_Max value)? max,
+    required TResult orElse(),
+  }) {
+    if (max != null) {
+      return max(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Max implements CartState {
+  const factory _Max({final String message}) = _$_Max;
+
+  String get message => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  _$$_MaxCopyWith<_$_Max> get copyWith => throw _privateConstructorUsedError;
 }

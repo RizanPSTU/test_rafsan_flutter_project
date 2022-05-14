@@ -27,7 +27,6 @@ class CartWithState extends StatelessWidget {
         );
       },
       builder: (context, state) {
-        print("${state}");
         return state.maybeWhen(
           loading: () {
             return Loading();

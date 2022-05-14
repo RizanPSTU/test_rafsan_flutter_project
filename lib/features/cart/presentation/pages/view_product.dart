@@ -25,87 +25,103 @@ class _ViewProductState extends State<ViewProduct> {
       appBar: AppBar(
         title: Text(widget.product.name),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Stack(
-            children: [
-              FadeImage(
-                isShowAll: true,
-                product: widget.product,
-              ),
-              SizedBox(
-                height: 50,
-                child: ProdutHeader(product: widget.product),
-              ),
-            ],
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Stack(
               children: [
-                Text(
-                  widget.product.name,
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                Text(
-                  widget.product.priceEuro(),
-                  style: Theme.of(context).textTheme.headline6,
+                FadeImage(
+                  isShowAll: true,
+                  product: widget.product,
                 ),
                 SizedBox(
-                  height: 10.0,
-                ),
-                if (widget.product.stock > 0)
-                  Text(
-                    "In stock: ${widget.product.stock}",
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-                if (widget.product.stock == 0)
-                  Text(
-                    "Out of stock",
-                    style: Theme.of(context).textTheme.bodySmall,
-                  ),
-              ],
-            ),
-          ),
-          if (widget.product.stock > 0)
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: <Widget>[
-                IconButton(
-                  onPressed: widget.product.stock == _quantity
-                      ? null
-                      : () {
-                          setState(() {
-                            _quantity++;
-                          });
-                        },
-                  icon: Icon(Icons.add),
-                ),
-                Text(
-                  "${_quantity}",
-                  style: Theme.of(context).textTheme.headline6,
-                ),
-                IconButton(
-                  onPressed: _quantity == 1
-                      ? null
-                      : () {
-                          setState(() {
-                            _quantity--;
-                          });
-                        },
-                  icon: Icon(Icons.remove),
+                  height: 50,
+                  child: ProdutHeader(product: widget.product),
                 ),
               ],
             ),
-          Center(
-            child: AddToCartButton(
-              product: widget.product,
-              quantity: _quantity,
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    widget.product.name,
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                  SizedBox(
+                    height: 5.0,
+                  ),
+                  Text(
+                    widget.product.priceEuro(),
+                    style: Theme.of(context).textTheme.headline5,
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                    "Nutrations : ${widget.product.nutration}",
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  Text(
+                    "Taste : ${widget.product.taste}",
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  if (widget.product.stock > 0)
+                    Text(
+                      "In stock: ${widget.product.stock}",
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                  if (widget.product.stock == 0)
+                    Text(
+                      "Out of stock",
+                      style: Theme.of(context).textTheme.bodySmall,
+                    ),
+                ],
+              ),
             ),
-          ),
-        ],
+            if (widget.product.stock > 0)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: <Widget>[
+                  IconButton(
+                    onPressed: widget.product.stock == _quantity
+                        ? null
+                        : () {
+                            setState(() {
+                              _quantity++;
+                            });
+                          },
+                    icon: Icon(Icons.add),
+                  ),
+                  Text(
+                    "${_quantity}",
+                    style: Theme.of(context).textTheme.headline6,
+                  ),
+                  IconButton(
+                    onPressed: _quantity == 1
+                        ? null
+                        : () {
+                            setState(() {
+                              _quantity--;
+                            });
+                          },
+                    icon: Icon(Icons.remove),
+                  ),
+                ],
+              ),
+            Center(
+              child: AddToCartButton(
+                product: widget.product,
+                quantity: _quantity,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -20,6 +20,10 @@ class CartBloc extends Bloc<CartEvent, CartState> {
             emit(CartState.alreadyInCart());
             emit(CartState.loaded(cartMap: _cart));
           } else {
+            if (quantity > product.stock) {
+              emit(CartState.yourQuantityIsHigerThenStock());
+              return;
+            }
             _cart[product] = quantity;
             emit(CartState.added());
             emit(CartState.loaded(cartMap: _cart));
@@ -33,8 +37,28 @@ class CartBloc extends Bloc<CartEvent, CartState> {
         load: () {
           emit(CartState.loaded(cartMap: _cart));
         },
-        decrement: (Product product) {},
-        increment: (Product product) {},
+        decrement: (Product product) {
+          emit(CartState.loading());
+          int _qn = _cart[product]!;
+          if (_qn == 1) {
+            emit(CartState.min());
+          } else {
+            _qn--;
+            _cart[product] = _qn;
+          }
+          emit(CartState.loaded(cartMap: _cart));
+        },
+        increment: (Product product) {
+          emit(CartState.loading());
+          int _qn = _cart[product]!;
+          if (_qn == product.stock) {
+            emit(CartState.max());
+          } else {
+            _qn++;
+            _cart[product] = _qn;
+          }
+          emit(CartState.loaded(cartMap: _cart));
+        },
       );
     });
   }
